@@ -33,7 +33,6 @@ class Hafizur extends StatelessWidget {
                   decorationColor: Colors.red,
                   decorationStyle: TextDecorationStyle.wavy,
 
-
                 ),),
               ),
             )
