@@ -1,43 +1,31 @@
 import 'package:flutter/material.dart';
-
 void main() {
-  runApp(Hafizur());
+  runApp(Rubel());
 }
-
-class Hafizur extends StatelessWidget {
-  const Hafizur({Key? key}) : super(key: key);
-
+class Rubel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.deepOrangeAccent,
-          elevation: 40,
-          leading: Icon(Icons.ac_unit_sharp),
+          actions: [Icon(Icons.account_balance),
+            Icon(Icons.align_vertical_top_rounded)],
+          leading: Icon(Icons.accessibility_new_rounded),
+          backgroundColor: Colors.purple,
           centerTitle: true,
-          title: Text("Title"),
-          actions: [Icon(Icons.access_time)],
+          title: Text("Monir "),
         ),
         body: SafeArea(
-            child:
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(
-                child: Text("Bangladesh, to the east of India on the Bay of Bengal, is a South Asian country marked by lush greenery and many waterways.\n\nIts Padma (Ganges), Meghna and Jamuna rivers create fertile plains, and travel by boat is common.\n\n\t\tOn the southern coast, the Sundarbans, an enormous mangrove forest shared with Eastern India, is home to the royal Bengal tiger.",
-                style: TextStyle(
-                  color: Colors.purple,
-                  fontSize: 20,
-                  decoration: TextDecoration.underline,
-                  decorationColor: Colors.red,
-                  decorationStyle: TextDecorationStyle.wavy,
-
-                ),),
-              ),
-            )
-        ),
-      ),
+          child: Text("Bangladesh, to the east of India on the Bay of Bengal, is a South Asian country marked by lush greenery and many waterways. Its Padma (Ganges), Meghna and Jamuna rivers create fertile plains, and travel by boat is common. On the southern coast, the Sundarbans, an enormous mangrove forest shared with Eastern India, is home to the royal Bengal tiger. ",
+          style: TextStyle(fontSize: 24,
+          color: Colors.deepOrange,
+          backgroundColor: Colors.green,
+          fontWeight: FontWeight.normal),
+          ),
+        )
+      )
     );
   }
 }
+
+
