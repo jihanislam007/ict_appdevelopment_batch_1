@@ -1,29 +1,35 @@
 import 'package:flutter/material.dart';
 void main() {
-  runApp(Rubel());
-}
-class Rubel extends StatelessWidget {
+  runApp(jomshedAli());}
+class jomshedAli extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          actions: [Icon(Icons.account_balance),
-            Icon(Icons.align_vertical_top_rounded)],
-          leading: Icon(Icons.accessibility_new_rounded),
-          backgroundColor: Colors.purple,
+          leading: Icon(Icons.add_road_rounded),
+          actions: [Icon(Icons.api_rounded),Icon(Icons.add_road_rounded)],
           centerTitle: true,
-          title: Text("Monir "),
+          title: Text("Batch -001 "),
         ),
         body: SafeArea(
-          child: Text("Bangladesh, to the east of India on the Bay of Bengal, is a South Asian country marked by lush greenery and many waterways. Its Padma (Ganges), Meghna and Jamuna rivers create fertile plains, and travel by boat is common. On the southern coast, the Sundarbans, an enormous mangrove forest shared with Eastern India, is home to the royal Bengal tiger. ",
-          style: TextStyle(fontSize: 24,
-          color: Colors.deepOrange,
-          backgroundColor: Colors.green,
-          fontWeight: FontWeight.normal),
+          child: ListView(
+            children: [
+
+              Container(
+                  height: 100,
+                  width: 200,
+                  color: Colors.deepOrange,
+                  child: Center(child: Text("Batch -001 "))),Container(
+                  height: 100,
+                  width: 200,
+                  color: Colors.purple,
+                  child: Text("Batch -002 ")),
+              Text("Batch -003 ")
+            ],
           ),
-        )
-      )
+        ),
+      ),
     );
   }
 }
