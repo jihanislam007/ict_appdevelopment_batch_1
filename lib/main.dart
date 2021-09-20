@@ -1,37 +1,32 @@
 import 'package:flutter/material.dart';
+
 void main() {
-  runApp(jomshedAli());}
-class jomshedAli extends StatelessWidget {
+  runApp(myApp());
+}
+
+class myApp extends StatelessWidget {
+  const myApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.add_road_rounded),
-          actions: [Icon(Icons.api_rounded),Icon(Icons.add_road_rounded)],
+          leading: Icon(Icons.account_balance),
+          actions: [Icon(Icons.agriculture),
+            Icon(Icons.agriculture)],
+          backgroundColor: Colors.deepPurple,
+          title: Text("batch 01"),
           centerTitle: true,
-          title: Text("Batch -001 "),
         ),
         body: SafeArea(
-          child: ListView(
-            children: [
-
-              Container(
-                  height: 100,
-                  width: 200,
-                  color: Colors.deepOrange,
-                  child: Center(child: Text("Batch -001 "))),Container(
-                  height: 100,
-                  width: 200,
-                  color: Colors.purple,
-                  child: Text("Batch -002 ")),
-              Text("Batch -003 ")
-            ],
+          child: Center(
+            child: Text("Jomshed Ali college",
+              style: TextStyle(fontSize: 24,
+                  color: Colors.red),),
           ),
         ),
       ),
     );
   }
 }
-
-
