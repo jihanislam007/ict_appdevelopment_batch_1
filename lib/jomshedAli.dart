@@ -10,20 +10,29 @@ class jomshedAli extends StatelessWidget {
           title: Text("Batch -01"),
         ),
         body: SafeArea(
-          child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("we want to creat a button"),
-                ElevatedButton(
-                    onPressed: () {
-                      print("pressed me...");
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Containers()));
-                    },
-                    child: Text("Container"))
-              ],
+          //mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+            Text("Jomshed Ali"),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 118),
+              child: Text("Kushumhati, Sherpur"),
             ),
-          ),
-        ));
+            //SizedBox(height: 300,),
+            Center(
+              child: ElevatedButton(
+                  onPressed: () {
+                    //print("Pressed mee.....");
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Containers()));
+                  },
+                  child: Text("My Button")),
+            ),
+
+
+          ],
+        )));
   }
 }
