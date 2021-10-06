@@ -25,6 +25,16 @@ class Containers extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.pinkAccent
                 ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+
+                    Align(
+                        alignment: Alignment.center,
+                        child: Text("A"))
+
+                  ],
+                ),
                 //color: Colors.pinkAccent,
               ),
             ),

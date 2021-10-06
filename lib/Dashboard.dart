@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Containers.dart';
+import 'imageLoad.dart';
 
 class Dashboard extends StatelessWidget {
   @override
@@ -22,16 +23,17 @@ class Dashboard extends StatelessWidget {
               ElevatedButton(
                   onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Containers()));
-              }, child: Text("Container"))
+              }, child: Text("Container")),
 
-
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => OnlineImageLoad()));
+                  },
+                  child: Text("Online Image Load"))
 
             ],
           ),
         ),
-
-
-
     );
   }
 }
