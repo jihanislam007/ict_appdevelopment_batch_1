@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Containers.dart';
+import 'RowColumn.dart';
 import 'imageLoad.dart';
 
 class Dashboard extends StatelessWidget {
@@ -11,27 +12,32 @@ class Dashboard extends StatelessWidget {
           title: Text("Batch -01"),
         ),
         body: SafeArea(
-          child: Column(
-            children: [
-              Text(" cbvdhcbdjcdk"),
-              Text(" cbvdhcbdjcdk"),
-              Text(" cbvdhcbdjcdk"),
-              Text(" cbvdhcbdjcdk"),
-              Text(" cbvdhcbdjcdk"),
-              Text(" cbvdhcbdjcdk"),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(" cbvdhcbdjcdk"),
+                Text(" cbvdhcbdjcdk"),
 
-              ElevatedButton(
-                  onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Containers()));
-              }, child: Text("Container")),
+                ElevatedButton(
+                    onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Containers()));
+                }, child: Text("Container")),
 
-              ElevatedButton(
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => OnlineImageLoad()));
-                  },
-                  child: Text("Online Image Load"))
+                ElevatedButton(
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => OnlineImageLoad()));
+                    },
+                    child: Text("Online Image Load")),
 
-            ],
+                ElevatedButton(
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => RowColumn()));
+                    },
+                    child: Text("Row Column"))
+
+              ],
+            ),
           ),
         ),
     );
