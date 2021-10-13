@@ -10,268 +10,214 @@ class RowColumn extends StatelessWidget {
         title: Text("Row Column"),
       ),
       body: SafeArea(
-        child: Column(
-          children: [
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
 
-            Container(
-              width: double.infinity,
-              height: 150,
-              color: Colors.black12,
-            ),
-
-            SizedBox(height: 10,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-
-                Container(
-                  height: 100,
-                  width: 80,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 2,color: Colors.pink,),
-                    shape: BoxShape.circle,
-                    color: Colors.amber
-
-                  ),
-                  //color: Colors.pink,
-                  child: Center(child: Text("1",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                ),
-                SizedBox(width: 10,),
-                Container(
-                  height: 100,
-                  width: 80,
-                  decoration: BoxDecoration(
-                      border: Border.all(width: 2,color: Colors.pink,),
-                      shape: BoxShape.circle,
-                      color: Colors.amber
-
-                  ),
-                  //color: Colors.pink,
-                  child: Center(child: Text("2",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                ),
-                SizedBox(width: 10,),
-                Container(
-                  height: 100,
-                  width: 80,
-                  decoration: BoxDecoration(
-                      border: Border.all(width: 2,color: Colors.pink,),
-                      shape: BoxShape.circle,
-                      color: Colors.amber
-
-                  ),
-                  //color: Colors.pink,
-                  child: Center(child: Text("3",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                ),
-                SizedBox(width: 10,),
-                Container(
-                  height: 100,
-                  width: 80,
-                  decoration: BoxDecoration(
-                      border: Border.all(width: 2,color: Colors.pink,),
-                      shape: BoxShape.circle,
-                      color: Colors.amber
-
-                  ),
-                  //color: Colors.pink,
-                  child: Center(child: Text("+",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                ),
-
-              ],
-            ),
-            SizedBox(height: 10,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-
-                Container(
-                  height: 100,
-                  width: 80,
-                  decoration: BoxDecoration(
-                      border: Border.all(width: 2,color: Colors.pink,),
-                      shape: BoxShape.circle,
-                      color: Colors.amber
-
-                  ),
-                  //color: Colors.pink,
-                  child: Center(child: Text("1",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                ),
-                SizedBox(width: 10,),
-                Container(
-                  height: 100,
-                  width: 80,
-                  decoration: BoxDecoration(
-                      border: Border.all(width: 2,color: Colors.pink,),
-                      shape: BoxShape.circle,
-                      color: Colors.amber
-
-                  ),
-                  //color: Colors.pink,
-                  child: Center(child: Text("2",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                ),
-                SizedBox(width: 10,),
-                Container(
-                  height: 100,
-                  width: 80,
-                  decoration: BoxDecoration(
-                      border: Border.all(width: 2,color: Colors.pink,),
-                      shape: BoxShape.circle,
-                      color: Colors.amber
-
-                  ),
-                  //color: Colors.pink,
-                  child: Center(child: Text("3",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                ),
-                SizedBox(width: 10,),
-                Container(
-                  height: 100,
-                  width: 80,
-                  decoration: BoxDecoration(
-                      border: Border.all(width: 2,color: Colors.pink,),
-                      shape: BoxShape.circle,
-                      color: Colors.amber
-
-                  ),
-                  //color: Colors.pink,
-                  child: Center(child: Text("+",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                ),
-
-              ],
-            ),
-            SizedBox(height: 10,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
+              Container(height: 150,color: Colors.black12,),
+               Row(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
 
-                        Container(
-                          height: 100,
-                          width: 80,
-                          decoration: BoxDecoration(
-                              border: Border.all(width: 2,color: Colors.pink,),
-                              shape: BoxShape.circle,
-                              color: Colors.amber
-
-                          ),
-                          //color: Colors.pink,
-                          child: Center(child: Text("1",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                        ),
-                        SizedBox(width: 10,),
-                        Container(
-                          height: 100,
-                          width: 80,
-                          decoration: BoxDecoration(
-                              border: Border.all(width: 2,color: Colors.pink,),
-                              shape: BoxShape.circle,
-                              color: Colors.amber
-
-                          ),
-                          //color: Colors.pink,
-                          child: Center(child: Text("2",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                        ),
-                        SizedBox(width: 10,),
-                        Container(
-                          height: 100,
-                          width: 80,
-                          decoration: BoxDecoration(
-                              border: Border.all(width: 2,color: Colors.pink,),
-                              shape: BoxShape.circle,
-                              color: Colors.amber
-
-                          ),
-                          //color: Colors.pink,
-                          child: Center(child: Text("3",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                        ),
-                        /*SizedBox(width: 10,),
-                Container(
-                  height: 100,
-                  width: 80,
-                  decoration: BoxDecoration(
-                      border: Border.all(width: 2,color: Colors.pink,),
-                      shape: BoxShape.circle,
-                      color: Colors.amber
-
-                  ),
-                  //color: Colors.pink,
-                  child: Center(child: Text("+",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                ),*/
-
-                      ],
+                    Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 2,color: Colors.teal),
+                        shape: BoxShape.circle,
+                        color: Colors.amber
+                      ),
+                      child: Center(child: Text("1",style: TextStyle(fontSize: 32),)),
+                      //color: Colors.pink,
                     ),
-                    SizedBox(height: 10,),
+                    Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          border: Border.all(width: 2,color: Colors.teal),
+                          shape: BoxShape.circle,
+                          color: Colors.amber
+                      ),child: Center(child: Text("2",style: TextStyle(fontSize: 32),)),
 
-                    Row(
-                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-
-                        Container(
-                          height: 100,
-                          width: 80,
-                          decoration: BoxDecoration(
-                              border: Border.all(width: 2,color: Colors.pink,),
-                              shape: BoxShape.circle,
-                              color: Colors.amber
-
-                          ),
-                          //color: Colors.pink,
-                          child: Center(child: Text("1",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                        ),
-                        SizedBox(width: 10,),
-                        Container(
-                          height: 100,
-                          width: 80,
-                          decoration: BoxDecoration(
-                              border: Border.all(width: 2,color: Colors.pink,),
-                              shape: BoxShape.circle,
-                              color: Colors.amber
-
-                          ),
-                          //color: Colors.pink,
-                          child: Center(child: Text("2",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                        ),
-                        SizedBox(width: 10,),
-                        Container(
-                          height: 100,
-                          width: 80,
-                          decoration: BoxDecoration(
-                              border: Border.all(width: 2,color: Colors.pink,),
-                              shape: BoxShape.circle,
-                              color: Colors.amber
-
-                          ),
-                          //color: Colors.pink,
-                          child: Center(child: Text("3",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                        ),
-                        SizedBox(width: 10,),
-                        /*Container(
-                  height: 100,
-                  width: 80,
-                  decoration: BoxDecoration(
-                      border: Border.all(width: 2,color: Colors.pink,),
-                      shape: BoxShape.circle,
-                      color: Colors.amber
-
-                  ),
-                  //color: Colors.pink,
-                  child: Center(child: Text("+",style: TextStyle(fontSize: 32,color: Colors.white),)),
-                ),*/
-
-                      ],
+                      //color: Colors.pink,
                     ),
+                    Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          border: Border.all(width: 2,color: Colors.teal),
+                          shape: BoxShape.circle,
+                          color: Colors.amber
+                      ),
+                      child: Center(child: Text("3",style: TextStyle(fontSize: 32),)),
+
+                      //color: Colors.pink,
+                    ),
+
                   ],
                 ),
-                Container(
-                  height: 180,
-                  width: 80,
-                  color: Colors.pink,
-                ),
-              ],
-            ),
+              Row(
+                children: [
 
-          ],
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 2,color: Colors.teal),
+                        shape: BoxShape.circle,
+                        color: Colors.amber
+                    ),
+                    child: Center(child: Text("1",style: TextStyle(fontSize: 32),)),
+                    //color: Colors.pink,
+                  ),
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 2,color: Colors.teal),
+                        shape: BoxShape.circle,
+                        color: Colors.amber
+                    ),child: Center(child: Text("2",style: TextStyle(fontSize: 32),)),
+
+                    //color: Colors.pink,
+                  ),
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 2,color: Colors.teal),
+                        shape: BoxShape.circle,
+                        color: Colors.amber
+                    ),
+                    child: Center(child: Text("3",style: TextStyle(fontSize: 32),)),
+
+                    //color: Colors.pink,
+                  ),
+
+                ],
+              ),
+              Row(
+                children: [
+
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 2,color: Colors.teal),
+                        shape: BoxShape.circle,
+                        color: Colors.amber
+                    ),
+                    child: Center(child: Text("1",style: TextStyle(fontSize: 32),)),
+                    //color: Colors.pink,
+                  ),
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 2,color: Colors.teal),
+                        shape: BoxShape.circle,
+                        color: Colors.amber
+                    ),child: Center(child: Text("2",style: TextStyle(fontSize: 32),)),
+
+                    //color: Colors.pink,
+                  ),
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 2,color: Colors.teal),
+                        shape: BoxShape.circle,
+                        color: Colors.amber
+                    ),
+                    child: Center(child: Text("3",style: TextStyle(fontSize: 32),)),
+
+                    //color: Colors.pink,
+                  ),
+
+                ],
+              ),
+              Row(
+                children: [
+
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 2,color: Colors.teal),
+                        shape: BoxShape.circle,
+                        color: Colors.amber
+                    ),
+                    child: Center(child: Text("1",style: TextStyle(fontSize: 32),)),
+                    //color: Colors.pink,
+                  ),
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 2,color: Colors.teal),
+                        shape: BoxShape.circle,
+                        color: Colors.amber
+                    ),child: Center(child: Text("2",style: TextStyle(fontSize: 32),)),
+
+                    //color: Colors.pink,
+                  ),
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 2,color: Colors.teal),
+                        shape: BoxShape.circle,
+                        color: Colors.amber
+                    ),
+                    child: Center(child: Text("3",style: TextStyle(fontSize: 32),)),
+
+                    //color: Colors.pink,
+                  ),
+
+                ],
+              ),
+              Row(
+                children: [
+
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 2,color: Colors.teal),
+                        shape: BoxShape.circle,
+                        color: Colors.amber
+                    ),
+                    child: Center(child: Text("1",style: TextStyle(fontSize: 32),)),
+                    //color: Colors.pink,
+                  ),
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 2,color: Colors.teal),
+                        shape: BoxShape.circle,
+                        color: Colors.amber
+                    ),child: Center(child: Text("2",style: TextStyle(fontSize: 32),)),
+
+                    //color: Colors.pink,
+                  ),
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 2,color: Colors.teal),
+                        shape: BoxShape.circle,
+                        color: Colors.amber
+                    ),
+                    child: Center(child: Text("3",style: TextStyle(fontSize: 32),)),
+
+                    //color: Colors.pink,
+                  ),
+
+                ],
+              ),
+
+            ],
+          ),
         ),
       ),
     );

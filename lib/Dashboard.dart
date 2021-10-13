@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'Containers.dart';
 import 'RowColumn.dart';
+import 'Stacks.dart';
 import 'imageLoad.dart';
 
 class Dashboard extends StatelessWidget {
@@ -34,7 +35,13 @@ class Dashboard extends StatelessWidget {
                     onPressed: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context) => RowColumn()));
                     },
-                    child: Text("Row Column"))
+                    child: Text("Row Column")),
+
+                ElevatedButton(
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Stacks()));
+                    },
+                    child: Text("Stack"))
 
               ],
             ),
