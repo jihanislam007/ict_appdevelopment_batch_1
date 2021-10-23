@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'Cards.dart';
 import 'Containers.dart';
 import 'RowColumn.dart';
 import 'Stacks.dart';
 import 'imageLoad.dart';
+import 'listTiles.dart';
 
 class Dashboard extends StatelessWidget {
   @override
@@ -41,7 +43,19 @@ class Dashboard extends StatelessWidget {
                     onPressed: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context) => Stacks()));
                     },
-                    child: Text("Stack"))
+                    child: Text("Stack")),
+
+                ElevatedButton(
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ListTiles()));
+                    },
+                    child: Text("ListView And Listtile")),
+
+                ElevatedButton(
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => cards()));
+                    },
+                    child: Text("Card"))
 
               ],
             ),
