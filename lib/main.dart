@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'Auth/Splash.dart';
 import 'Dashboard.dart';
 import 'calculator/calculator.dart';
 import 'railSeba/rail.dart';
@@ -12,7 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: calculator(),
+      debugShowCheckedModeBanner: false,
+      home: splash(),
     );
   }
 }

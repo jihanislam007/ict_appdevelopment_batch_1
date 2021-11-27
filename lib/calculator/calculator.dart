@@ -12,7 +12,7 @@ class calculator extends StatefulWidget {
 class _calculatorState extends State<calculator> {
   late double firstnum, secondnum;
 
-  late String res='', display='', history='',operation;
+  late String res='', display='0', history='',operation;
 
   void btnOnclick(String btnValue){
     print(btnValue);
@@ -21,7 +21,7 @@ class _calculatorState extends State<calculator> {
       firstnum = 0;
       secondnum = 0;
       res ='';
-      display = '';
+      display = '0';
       history='';
     }else if(btnValue == 'C'){
       firstnum = 0;
@@ -33,7 +33,7 @@ class _calculatorState extends State<calculator> {
       firstnum = double.parse(display);
       res = '';
       operation =btnValue;
-      history=display;
+      history=display + btnValue;
 
     }else if(btnValue == '='){
       secondnum =  double.parse(display);
@@ -53,6 +53,7 @@ class _calculatorState extends State<calculator> {
 
     setState(() {
       display =res;
+      //history=display + btnValue;
     });
 
   }
