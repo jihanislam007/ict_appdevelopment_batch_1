@@ -80,8 +80,7 @@ class signIn extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20)),
                 child: TextButton(
                     onPressed: () {
-                      /*Fluttertoast.showToast(msg: userNameController.text+'\n'+ passwordController.text, toastLength: Toast.LENGTH_LONG,
-                      backgroundColor: Colors.deepOrange);*/
+
                       if (userNameController.text.isEmpty &&
                           passwordController.text.isEmpty) {
                         Fluttertoast.showToast(
