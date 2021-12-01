@@ -52,7 +52,7 @@ class _signupState extends State<signup> {
                 children: [
                   Container(
                       child: _dateTime == null
-                          ? Text('Date : DD-MM-YYYY')
+                          ? Flexible(child: TextField())
                           : Text(
                               'Date : ${_dateTime!.day}-${_dateTime!.month}-${_dateTime!.year}')),
                   IconButton(
