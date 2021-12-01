@@ -2,6 +2,7 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ict_appdevelopment_batch_1/Auth/signup.dart';
 import 'package:ict_appdevelopment_batch_1/Dashboard.dart';
 
 class signIn extends StatelessWidget {
@@ -118,14 +119,17 @@ class signIn extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20)),
                 child: TextButton(
                     onPressed: () {
-                      Fluttertoast.showToast(
+                      /*Fluttertoast.showToast(
                           msg: 'Login successful',
                           toastLength: Toast.LENGTH_SHORT,
                           gravity: ToastGravity.SNACKBAR,
                           timeInSecForIosWeb: 1,
                           backgroundColor: Colors.red,
                           textColor: Colors.white,
-                          fontSize: 16.0);
+                          fontSize: 16.0);*/
+
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => signup()));
+
                     },
                     child: Text('Registration',
                         style: GoogleFonts.aBeeZee(color: Color(0xFF14B9C1)))),
