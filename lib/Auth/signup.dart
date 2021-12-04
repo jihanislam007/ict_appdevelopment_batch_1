@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:ict_appdevelopment_batch_1/Auth/login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'signIn.dart';
 
 class signup extends StatefulWidget {
   @override
@@ -10,6 +14,8 @@ class _signupState extends State<signup> {
   DateTime? _dateTime;
   int _valueradio = 0;
   int radiovalue = 0;
+
+  String? user_name;
 
   getDate() async {
     DateTime? date = await showDatePicker(
@@ -22,6 +28,10 @@ class _signupState extends State<signup> {
     });
   }
 
+  TextEditingController userController  = TextEditingController();
+  TextEditingController passController = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,11 +39,25 @@ class _signupState extends State<signup> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+
             Center(child: Text('Sign up')),
+
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
-                //controller: passwordController,
+                controller: userController,
+                //obscureText: true,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'user name',
+                    hintText: 'Enter your user name'),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: passController,
                 obscureText: true,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -41,6 +65,7 @@ class _signupState extends State<signup> {
                     hintText: 'Enter your password'),
               ),
             ),
+
             Container(
               height: 60,
               decoration: BoxDecoration(
@@ -52,7 +77,7 @@ class _signupState extends State<signup> {
                 children: [
                   Container(
                       child: _dateTime == null
-                          ? Flexible(child: TextField())
+                          ? Flexible(child: Text('Date : DD-MM-YYYY'))
                           : Text(
                               'Date : ${_dateTime!.day}-${_dateTime!.month}-${_dateTime!.year}')),
                   IconButton(
@@ -66,17 +91,7 @@ class _signupState extends State<signup> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                //controller: passwordController,
-                obscureText: true,
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Password',
-                    hintText: 'Enter your password'),
-              ),
-            ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -120,11 +135,13 @@ class _signupState extends State<signup> {
                 )
               ],
             ),
+
             TextButton(
                 onPressed: () {
                   getgender();
                 },
                 child: Text('Gender')),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -159,7 +176,12 @@ class _signupState extends State<signup> {
 
 
               ],
-            ),ElevatedButton(onPressed: (){
+            ),
+
+            ElevatedButton(onPressed: (){
+              setSharedPreferance();
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> signIn()));
+
               Fluttertoast.showToast(msg: radiovalue.toString(), toastLength: Toast.LENGTH_LONG);
             }, child: Text('Submit'))
           ],
@@ -177,4 +199,16 @@ class _signupState extends State<signup> {
     Fluttertoast.showToast(
         msg: _valueradio.toString(), toastLength: Toast.LENGTH_LONG);
   }
+
+  setSharedPreferance() async {
+
+    final pref = await SharedPreferences.getInstance();
+
+    pref.setString('user_name', userController.text);
+    pref.setString('pass', passController.text);
+
+  }
+
+
+
 }

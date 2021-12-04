@@ -4,14 +4,29 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ict_appdevelopment_batch_1/Auth/signup.dart';
 import 'package:ict_appdevelopment_batch_1/Dashboard.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class signIn extends StatelessWidget {
+import 'profile.dart';
+
+class signIn extends StatefulWidget {
+  @override
+  _signInState createState() => _signInState();
+}
+
+class _signInState extends State<signIn> {
   TextEditingController userNameController = TextEditingController();
+
   TextEditingController passwordController = TextEditingController();
 
-  String userName = 'mobil';
-  String pass = '2345';
+  String userName='';
+  String pass='';
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    getShapref();
+    super.initState();
+  }
 
 
   @override
@@ -63,7 +78,9 @@ class signIn extends StatelessWidget {
               Container(
                 alignment: Alignment.centerRight,
                 child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> profile()));
+                    },
                     child: Padding(
                       padding: const EdgeInsets.only(right: 8),
                       child: Text(
@@ -142,5 +159,16 @@ class signIn extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  getShapref() async{
+
+    final pref = await SharedPreferences.getInstance();
+
+    setState(() {
+      userName = pref.getString('user_name')!;
+      pass = pref.getString('pass')!;
+    });
+
   }
 }
