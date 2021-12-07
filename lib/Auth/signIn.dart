@@ -2,6 +2,7 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ict_appdevelopment_batch_1/Auth/Forgotpass.dart';
 import 'package:ict_appdevelopment_batch_1/Auth/signup.dart';
 import 'package:ict_appdevelopment_batch_1/Dashboard.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -18,8 +19,8 @@ class _signInState extends State<signIn> {
 
   TextEditingController passwordController = TextEditingController();
 
-  String userName='';
-  String pass='';
+  String userName = '';
+  String pass = '';
 
   @override
   void initState() {
@@ -27,7 +28,6 @@ class _signInState extends State<signIn> {
     getShapref();
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -79,12 +79,28 @@ class _signInState extends State<signIn> {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> profile()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => ForgotPass()));
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(right: 8),
                       child: Text(
                         'Forgot password',
+                        style: GoogleFonts.aBeeZee(color: Color(0xFF14B9C1)),
+                      ),
+                    )),
+              ),
+              Container(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => profile()));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: Text(
+                        'profile',
                         style: GoogleFonts.aBeeZee(color: Color(0xFF14B9C1)),
                       ),
                     )),
@@ -100,7 +116,6 @@ class _signInState extends State<signIn> {
                     borderRadius: BorderRadius.circular(20)),
                 child: TextButton(
                     onPressed: () {
-
                       if (userNameController.text.isEmpty &&
                           passwordController.text.isEmpty) {
                         Fluttertoast.showToast(
@@ -114,7 +129,10 @@ class _signInState extends State<signIn> {
                             toastLength: Toast.LENGTH_LONG,
                             backgroundColor: Colors.deepOrange);
 
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Dashboard()));
                       } else {
                         Fluttertoast.showToast(
                             msg: 'Please try with valid password',
@@ -145,8 +163,8 @@ class _signInState extends State<signIn> {
                           textColor: Colors.white,
                           fontSize: 16.0);*/
 
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => signup()));
-
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => signup()));
                     },
                     child: Text('Registration',
                         style: GoogleFonts.aBeeZee(color: Color(0xFF14B9C1)))),
@@ -161,14 +179,12 @@ class _signInState extends State<signIn> {
     );
   }
 
-  getShapref() async{
-
+  getShapref() async {
     final pref = await SharedPreferences.getInstance();
 
     setState(() {
       userName = pref.getString('user_name')!;
       pass = pref.getString('pass')!;
     });
-
   }
 }
