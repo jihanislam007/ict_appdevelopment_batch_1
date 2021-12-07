@@ -36,155 +36,166 @@ class _signupState extends State<signup> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
 
-            Center(child: Text('Sign up')),
+              Center(child: Text('Sign up')),
 
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                controller: userController,
-                //obscureText: true,
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'user name',
-                    hintText: 'Enter your user name'),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: userController,
+                  //obscureText: true,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'user name',
+                      hintText: 'Enter your user name'),
+                ),
               ),
-            ),
 
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                controller: passController,
-                obscureText: true,
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Password',
-                    hintText: 'Enter your password'),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: passController,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Password',
+                      hintText: 'Enter your password'),
+                ),
               ),
-            ),
 
-            Container(
-              height: 60,
-              decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Color(0xFF8A8383))),
-              margin: EdgeInsets.only(left: 12, right: 12),
-              padding: EdgeInsets.only(left: 12, right: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Container(
+                height: 60,
+                decoration: BoxDecoration(
+                    border: Border.all(width: 1, color: Color(0xFF8A8383))),
+                margin: EdgeInsets.only(left: 12, right: 12),
+                padding: EdgeInsets.only(left: 12, right: 12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                        child: _dateTime == null
+                            ? Flexible(child: Text('Date : DD-MM-YYYY'))
+                            : Text(
+                                'Date : ${_dateTime!.day}-${_dateTime!.month}-${_dateTime!.year}')),
+                    IconButton(
+                        onPressed: () {
+                          getDate();
+                        },
+                        icon: Icon(
+                          Icons.date_range_outlined,
+                          color: Color(0xFF06D231),
+                        ))
+                  ],
+                ),
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                      child: _dateTime == null
-                          ? Flexible(child: Text('Date : DD-MM-YYYY'))
-                          : Text(
-                              'Date : ${_dateTime!.day}-${_dateTime!.month}-${_dateTime!.year}')),
-                  IconButton(
-                      onPressed: () {
-                        getDate();
-                      },
-                      icon: Icon(
-                        Icons.date_range_outlined,
-                        color: Color(0xFF06D231),
-                      ))
+                  Flexible(
+                    flex: 2,
+                    child: Row(
+                      children: [
+                        Radio(
+                            value: 1,
+                            groupValue: _valueradio,
+                            onChanged: (value) {
+                              setState(() {
+                                _valueradio = value as int;
+                              });
+                            }),
+                        SizedBox(
+                          width: 0,
+                        ),
+                        Text("Male")
+                      ],
+                    ),
+                  ),
+                  Flexible(
+                    flex: 2,
+                    child: Row(
+                      children: [
+                        Radio(
+                            value: 2,
+                            groupValue: _valueradio,
+                            onChanged: (value) {
+                              setState(() {
+                                _valueradio = value as int;
+                              });
+                            }),
+                        SizedBox(
+                          width: 0,
+                        ),
+                        Text("Female")
+                      ],
+                    ),
+                  )
                 ],
               ),
-            ),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Flexible(
-                  flex: 2,
-                  child: Row(
+              TextButton(
+                  onPressed: () {
+                    getgender();
+                  },
+                  child: Text('Gender')),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Row(
                     children: [
                       Radio(
                           value: 1,
-                          groupValue: _valueradio,
+                          groupValue: radiovalue,
+                          activeColor: Color(0xFF14C10E),
                           onChanged: (value) {
                             setState(() {
-                              _valueradio = value as int;
+                              radiovalue = value as int;
                             });
                           }),
-                      SizedBox(
-                        width: 0,
-                      ),
-                      Text("Male")
+                      Text('Male')
                     ],
                   ),
-                ),
-                Flexible(
-                  flex: 2,
-                  child: Row(
+                  Row(
                     children: [
                       Radio(
                           value: 2,
-                          groupValue: _valueradio,
+                          groupValue: radiovalue,
                           onChanged: (value) {
                             setState(() {
-                              _valueradio = value as int;
+                              radiovalue = value as int;
                             });
                           }),
-                      SizedBox(
-                        width: 0,
-                      ),
-                      Text("Female")
+                      Text('FeMale')
                     ],
                   ),
-                )
-              ],
-            ),
-
-            TextButton(
-                onPressed: () {
-                  getgender();
-                },
-                child: Text('Gender')),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Row(
-                  children: [
-                    Radio(
-                        value: 1,
-                        groupValue: radiovalue,
-                        activeColor: Color(0xFF14C10E),
-                        onChanged: (value) {
-                          setState(() {
-                            radiovalue = value as int;
-                          });
-                        }),
-                    Text('Male')
-                  ],
-                ),
-                Row(
-                  children: [
-                    Radio(
-                        value: 2,
-                        groupValue: radiovalue,
-                        onChanged: (value) {
-                          setState(() {
-                            radiovalue = value as int;
-                          });
-                        }),
-                    Text('FeMale')
-                  ],
-                ),
 
 
 
-              ],
-            ),
+                ],
+              ),
 
-            ElevatedButton(onPressed: (){
-              setSharedPreferance();
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> signIn()));
+              ElevatedButton(onPressed: (){
 
-              Fluttertoast.showToast(msg: radiovalue.toString(), toastLength: Toast.LENGTH_LONG);
-            }, child: Text('Submit'))
-          ],
+                if(userController.text.isEmpty || passController.text.isEmpty || radiovalue == 0){
+                                  
+                  Fluttertoast.showToast(msg: 'Enter user name and pass', toastLength: Toast.LENGTH_LONG);
+
+                }else{
+                  Fluttertoast.showToast(msg: 'Submitted successfully', toastLength: Toast.LENGTH_LONG);
+
+                  setSharedPreferance();
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> signIn()));
+
+                }
+
+                }, child: Text('Submit'))
+            ],
+          ),
         ),
       ),
     );
