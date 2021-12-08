@@ -63,7 +63,6 @@ class _profileState extends State<profile> {
                                   TextButton(onPressed: () { _getFromcamera(); }, child: Text('Camera'),),
                                   TextButton(onPressed: () { _getFromGallery(); }, child: Text('gallery'),),
 
-
                                 ],
                               ),
                             ),

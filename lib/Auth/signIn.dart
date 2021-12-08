@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ict_appdevelopment_batch_1/Auth/Forgotpass.dart';
 import 'package:ict_appdevelopment_batch_1/Auth/signup.dart';
 import 'package:ict_appdevelopment_batch_1/Dashboard.dart';
+import 'package:ict_appdevelopment_batch_1/ecommerce/Home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'profile.dart';
@@ -132,7 +133,7 @@ class _signInState extends State<signIn> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Dashboard()));
+                                builder: (context) => Home()));
                       } else {
                         Fluttertoast.showToast(
                             msg: 'Please try with valid password',
