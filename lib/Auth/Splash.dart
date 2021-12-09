@@ -19,8 +19,11 @@ class _splashState extends State<splash> {
   void initState() {
     
     Timer(Duration(seconds: 10), (){
-      Navigator.push(context, MaterialPageRoute(builder: (context) => signIn()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => signIn()));
+      //Navigator.pushAndRemoveUntil(context, new MaterialPageRoute(builder: (context) => signIn(), (_) => false));
     });
+
+
     
   }
   
