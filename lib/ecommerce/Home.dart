@@ -4,6 +4,7 @@ import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:flutter_carousel_slider/carousel_slider_indicators.dart';
 import 'package:flutter_carousel_slider/carousel_slider_transforms.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:ict_appdevelopment_batch_1/data/productData.dart';
 import 'package:ict_appdevelopment_batch_1/ecommerce/DetailsView.dart';
 import 'package:ict_appdevelopment_batch_1/ecommerce/modelClass/productListmodel.dart';
 import 'package:ict_appdevelopment_batch_1/ecommerce/productList.dart';
@@ -28,8 +29,8 @@ class _HomeState extends State<Home> {
     ];
 
   /*All product list */
-  final List<productListModel> productlist = [
-    productListModel(1, "Product 1", "Bangladesh, to the east of India on the Bay of Bengal, is a South Asian country marked by lush greenery and many waterways. Its Padma (Ganges),", 5, 2, 20, 100, 5, 'https://cdn.pixabay.com/photo/2019/03/12/09/18/tomatoes-4050245__340.jpg'),
+  /*final List<productListModel> productlist = [
+    productListModel(1, "Product 1", "Bangladesh, to the east of India on the Bay of Bengal, is a South Asian country marked by lush greenery and many waterways. Its Padma (Ganges), Meghna and Jamuna rivers create fertile plains, and travel by boat is common. On the southern coast, the Sundarbans, an enormous mangrove forest shared with Eastern India, is home to the royal Bengal tiger.Bangladesh, to the east of India on the Bay of Bengal, is a South Asian country marked by lush greenery and many waterways. Its Padma (Ganges), Meghna and Jamuna rivers create fertile plains, and travel by boat is common. On the southern coast, the Sundarbans, an enormous mangrove forest shared with Eastern India, is home to the royal Bengal tiger.Bangladesh, to the east of India on the Bay of Bengal, is a South Asian country marked by lush greenery and many waterways. Its Padma (Ganges),Bangladesh, to the east of India on the Bay of Bengal, is a South Asian country marked by lush greenery and many waterways. Its Padma (Ganges), Meghna and Jamuna rivers create fertile plains, and travel by boat is common. On the southern coast, the Sundarbans, an enormous mangrove forest shared with Eastern India, is home to the royal Bengal tiger.", 5, 2, 20, 100, 5, 'https://cdn.pixabay.com/photo/2019/03/12/09/18/tomatoes-4050245__340.jpg'),
     productListModel(2, "Product 2", "Product 2 desc", 5, 2, 20, 100, 5, 'https://cdn.pixabay.com/photo/2019/03/12/09/18/tomatoes-4050245__340.jpg'),
     productListModel(3, "Product 3", "Product 3 desc", 5, 2, 20, 100, 5, 'https://cdn.pixabay.com/photo/2019/03/12/09/18/tomatoes-4050245__340.jpg'),
     productListModel(4, "Product 4", "Product 4 desc", 5, 2, 20, 100, 5, 'https://cdn.pixabay.com/photo/2019/03/12/09/18/tomatoes-4050245__340.jpg'),
@@ -37,7 +38,9 @@ class _HomeState extends State<Home> {
     productListModel(4, "Product 4", "Product 4 desc", 5, 2, 20, 100, 5, 'https://cdn.pixabay.com/photo/2019/03/12/09/18/tomatoes-4050245__340.jpg'),
     productListModel(5, "Product 5", "Product 5 desc", 5, 2, 20, 100, 5, 'https://cdn.pixabay.com/photo/2019/03/12/09/18/tomatoes-4050245__340.jpg'),
     productListModel(6, "Product 6", "Product 6 desc", 5, 2, 20, 100, 5, 'https://cdn.pixabay.com/photo/2019/03/12/09/18/tomatoes-4050245__340.jpg')
-  ];
+  ];*/
+
+  var pdata = new productdata();
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +85,7 @@ class _HomeState extends State<Home> {
                 //physics: NeverScrollableScrollPhysics(),
                   controller: new ScrollController(keepScrollOffset: false),
                   shrinkWrap: true,
-                itemCount: productlist.length,
+                itemCount: pdata.productlist.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     //childAspectRatio:  .90,
@@ -92,16 +95,16 @@ class _HomeState extends State<Home> {
                 itemBuilder: (BuildContext context, index){
                     return InkWell(
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailsView(productlist[index])));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailsView(pdata.productlist[index])));
                       },
                       child: Card(
                         elevation: 20,
                         child: Column(
                           children: [
                             Container(
-                              child: Image.network(productlist[index].imageUrl),
+                              child: Image.network(pdata.productlist[index].imageUrl),
                             ),
-                            Text(productlist[index].title)
+                            Text(pdata.productlist[index].title)
                           ],
                         ),
                       ),

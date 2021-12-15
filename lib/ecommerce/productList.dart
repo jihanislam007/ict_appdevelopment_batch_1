@@ -8,7 +8,7 @@ class ProductList extends StatelessWidget {
         title: Text('Product List'),
       ),
       body: ListView.builder(
-        itemCount: 10,
+        itemCount: 20,
           itemBuilder: (context, i){
             return Card(
               child: ListTile(
