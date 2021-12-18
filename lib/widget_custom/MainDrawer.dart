@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:ict_appdevelopment_batch_1/ecommerce/ListProduct.dart';
 import 'package:ict_appdevelopment_batch_1/ecommerce/counter.dart';
+import 'package:ict_appdevelopment_batch_1/ecommerce/multiple_choice.dart';
 import 'package:ict_appdevelopment_batch_1/ecommerce/productList.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -61,6 +62,13 @@ class MainDrawer extends StatelessWidget {
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=> counter()));
               Fluttertoast.showToast(msg: 'Counter',toastLength: Toast.LENGTH_LONG);
+            },
+          ),ListTile(
+            title: Text('ChoiceRow'),
+            leading: Icon(Icons.home),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> ChoiceRow()));
+              Fluttertoast.showToast(msg: 'ChoiceRow',toastLength: Toast.LENGTH_LONG);
             },
           )
         ],
