@@ -115,30 +115,7 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-              label: 'Product 1', icon: Icon(Icons.date_range)),
-          BottomNavigationBarItem(
-              label: 'Product 2', icon: Icon(Icons.account_box)),
-          BottomNavigationBarItem(
-              label: 'Product 3', icon: Icon(Icons.image)),
-        ],
-        backgroundColor: Colors.red,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.purple,
-        elevation: 20,
-        currentIndex: _selectNavPosiotion,
-        onTap: (int index){
-          setState(() {
-            _selectNavPosiotion = index;
-          });
-          if(index==1){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => ProductList()));
-          }
-          Fluttertoast.showToast(msg: index.toString(),toastLength: Toast.LENGTH_LONG);
-        },
-      ),
+
     );
   }
 

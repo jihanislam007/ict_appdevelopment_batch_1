@@ -8,6 +8,7 @@ import 'package:ict_appdevelopment_batch_1/Dashboard.dart';
 import 'package:ict_appdevelopment_batch_1/ecommerce/Home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../main.dart';
 import 'profile.dart';
 
 class signIn extends StatefulWidget {
@@ -133,7 +134,7 @@ class _signInState extends State<signIn> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Home()));
+                                builder: (context) => MyHome()));
                       } else {
                         Fluttertoast.showToast(
                             msg: 'Please try with valid password',
