@@ -6,6 +6,7 @@ import 'Auth/Splash.dart';
 import 'Dashboard.dart';
 import 'calculator/calculator.dart';
 import 'ecommerce/Home.dart';
+import 'ecommerce/JsonGetdata.dart';
 import 'ecommerce/ListProduct.dart';
 import 'ecommerce/productList.dart';
 import 'railSeba/rail.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: splash(),
+      home: JsonGetData()
+      //splash(),
     );
   }
 }

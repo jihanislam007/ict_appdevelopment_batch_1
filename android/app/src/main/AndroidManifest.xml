@@ -4,7 +4,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
    <application
-        android:label="ict_appdevelopment_batch_1"
+        android:label="batch One"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
