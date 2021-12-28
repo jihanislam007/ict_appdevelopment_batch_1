@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:ict_appdevelopment_batch_1/Auth/profile.dart';
+import 'package:ict_appdevelopment_batch_1/Auth/signup.dart';
 import 'package:ict_appdevelopment_batch_1/ecommerce/ListProduct.dart';
 import 'package:ict_appdevelopment_batch_1/ecommerce/counter.dart';
 import 'package:ict_appdevelopment_batch_1/ecommerce/multiple_choice.dart';
@@ -15,14 +17,17 @@ class MainDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
 
-                  Icon(Icons.account_box,size: 50,),
+                  Icon(Icons.account_box,size: 50,color: Colors.teal),
                   Text('User name'),
                   Text('Username@gmail.com'),
-
+                  Divider(thickness: 1,color: Colors.teal),
                 ],
               )),
+
+
           ListTile(
             title: Text('Home'),
             leading: Icon(Icons.home),
@@ -31,9 +36,19 @@ class MainDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            title: Text('SignUp'),
+            leading: Icon(Icons.account_box),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> signup()));
+              Fluttertoast.showToast(msg: 'SignUp',toastLength: Toast.LENGTH_LONG);
+            },
+          ),
+          ListTile(
             title: Text('profile'),
             leading: Icon(Icons.home),
             onTap: (){
+
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> profile()));
               Fluttertoast.showToast(msg: 'profile',toastLength: Toast.LENGTH_LONG);
             },
           ),

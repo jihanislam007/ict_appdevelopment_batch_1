@@ -23,7 +23,8 @@ class _DetailsViewState extends State<DetailsView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.proDetails.title),
+          backgroundColor: Colors.teal,
+          title: Text('Product Details'),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -78,7 +79,7 @@ class _DetailsViewState extends State<DetailsView> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(width: 1,color: Colors.indigo,)
+                      border: Border.all(width: 1,color: Colors.teal,)
                     ),
                     height: MediaQuery.of(context).size.height/10,
 
@@ -124,7 +125,7 @@ class _DetailsViewState extends State<DetailsView> {
                       flex: 1,
 
                       child: Container(
-                        color: Colors.indigo,
+                        color: Colors.teal,
                         child: Center(child: TextButton( onPressed: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=> Invoice(widget.proDetails, count)));
                         }, child: Text('Add To Cart',style: TextStyle(color: Colors.white,fontSize: 20),),)),

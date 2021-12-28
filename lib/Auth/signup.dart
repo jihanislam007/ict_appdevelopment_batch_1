@@ -29,6 +29,8 @@ class _signupState extends State<signup> {
   }
 
   TextEditingController userController  = TextEditingController();
+  TextEditingController mobileController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
   TextEditingController passController = TextEditingController();
 
 
@@ -52,6 +54,28 @@ class _signupState extends State<signup> {
                       border: OutlineInputBorder(),
                       labelText: 'user name',
                       hintText: 'Enter your user name'),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: mobileController,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Mobile',
+                      hintText: 'Enter your Mobile number'),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: addressController,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Address',
+                      hintText: 'Enter your Address'),
                 ),
               ),
 
@@ -137,7 +161,7 @@ class _signupState extends State<signup> {
                 ],
               ),
 
-              TextButton(
+              /*TextButton(
                   onPressed: () {
                     getgender();
                   },
@@ -177,11 +201,11 @@ class _signupState extends State<signup> {
 
 
                 ],
-              ),
+              ),*/
 
               ElevatedButton(onPressed: (){
 
-                if(userController.text.isEmpty || passController.text.isEmpty || radiovalue == 0){
+                if(userController.text.isEmpty || passController.text.isEmpty || _valueradio == 0){
                                   
                   Fluttertoast.showToast(msg: 'Enter user name and pass', toastLength: Toast.LENGTH_LONG);
 
@@ -216,6 +240,8 @@ class _signupState extends State<signup> {
     final pref = await SharedPreferences.getInstance();
 
     pref.setString('user_name', userController.text);
+    pref.setString('mobile', mobileController.text);
+    pref.setString('address', addressController.text);
     pref.setString('pass', passController.text);
 
   }

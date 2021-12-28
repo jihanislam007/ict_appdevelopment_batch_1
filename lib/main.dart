@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home()
+      home: //Home()
       // JsonGetData()
-      //splash(),
+      splash(),
     );
   }
 }
@@ -51,9 +51,9 @@ class _MyHomeState extends State<MyHome> {
           onPageChanged: onPagedChanged,
         ),
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.teal,
           selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.indigo,
+          unselectedItemColor: Colors.black,
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home,),

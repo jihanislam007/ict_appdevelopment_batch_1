@@ -11,6 +11,8 @@ class profile extends StatefulWidget {
 
 class _profileState extends State<profile> {
   String name = '';
+  String mobile = '';
+  String address = '';
   String pass = '';
 
   File? imageFile;
@@ -27,54 +29,88 @@ class _profileState extends State<profile> {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Text('Name : '),
-                  Text(name),
-                ],
-              ),
-              Row(
-                children: [
-                  Text('Password : '),
-                  Text(pass),
-                ],
-              ),
-              Container(
-                child: CircleAvatar(
-                  radius: 100,
-                  child: displaySignatureFile(),
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              children: [
+
+
+                SizedBox(height: 24,),
+
+                Container(
+                  child: CircleAvatar(
+                    radius: 100,
+                    child: displaySignatureFile(),
+                  ),
                 ),
-              ),
-              TextButton(
-                  onPressed: () {
+                TextButton(
+                    onPressed: () {
 
 
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return Dialog(
-                            child: Container(
-                              height: 150,
-                              child: Column(
-                                children: [
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Dialog(
+                              child: Container(
+                                height: 150,
+                                child: Column(
+                                  children: [
 
-                                  TextButton(onPressed: () { _getFromcamera(); }, child: Text('Camera'),),
-                                  TextButton(onPressed: () { _getFromGallery(); }, child: Text('gallery'),),
+                                    TextButton(onPressed: () { _getFromcamera(); }, child: Text('Camera'),),
+                                    TextButton(onPressed: () { _getFromGallery(); }, child: Text('gallery'),),
 
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                          );
-                        }
+                            );
+                          }
 
-                    );
+                      );
 
-                   //
-                  },
-                  child: Text('Choose Image'))
-            ],
+                     //
+                    },
+                    child: Text('Choose Image')),
+
+                SizedBox(height: 24,),
+
+                Row(
+                  children: [
+                    Text('Name : ',style: TextStyle(color: Colors.black,fontSize: 20)),
+                    Text(name,),
+                  ],
+                ),
+                SizedBox(height: 14,),
+                Row(
+                  children: [
+                    Text('Mobile : ',style: TextStyle(color: Colors.black,fontSize: 20)),
+                    Text(mobile),
+                  ],
+                ),
+                SizedBox(height: 14,),
+                Row(
+                  children: [
+                    Text('Address : ',style: TextStyle(color: Colors.black,fontSize: 20)),
+                    Text(address),
+                  ],
+                ),
+                SizedBox(height: 34,),
+                Container(
+                  width: 150,
+                  decoration: BoxDecoration(
+                    color: Colors.teal
+                  ),
+                  child: TextButton(
+                      onPressed: () {
+
+                        Navigator.pop(context);
+
+                        //
+                      },
+                      child: Text('back',style: TextStyle(color: Colors.white,fontSize: 20))),
+                ),
+
+              ],
+            ),
           ),
         ),
       ),
@@ -86,6 +122,8 @@ class _profileState extends State<profile> {
 
     setState(() {
       name = pref.getString('user_name')!;
+      mobile = pref.getString('mobile')!;
+      address = pref.getString('address')!;
       pass = pref.getString('pass')!;
     });
   }

@@ -47,7 +47,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       drawer: MainDrawer(),
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.teal,
         iconTheme: IconThemeData(color: Colors.white),
         title: Text('Home'),
         leading: Builder(
