@@ -11,8 +11,8 @@ class JsonGetData extends StatefulWidget {
 }
 
 class _JsonGetDataState extends State<JsonGetData> {
-  final url = "https://jsonplaceholder.typicode.com/posts";
 
+  final url = "https://jsonplaceholder.typicode.com/posts";
   var _postjson = [];
 
   @override
@@ -21,7 +21,6 @@ class _JsonGetDataState extends State<JsonGetData> {
     fetchData();
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,8 +30,10 @@ class _JsonGetDataState extends State<JsonGetData> {
           final load = _postjson[index];
             return Card(
               elevation: 20,
-              child: ListTile(
-                title: Text('Title : ${load['title']}'),
+              child: Card(
+                child: ListTile(
+                  title: Text('Title : ${load['title']}'),
+                ),
               ),
             );
           }),

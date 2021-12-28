@@ -20,7 +20,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: JsonGetData()
+      home: Home()
+      // JsonGetData()
       //splash(),
     );
   }
